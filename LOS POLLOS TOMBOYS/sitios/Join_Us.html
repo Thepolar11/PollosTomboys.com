@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>UNETENOS</title>
+<link rel="stylesheet" href="../css/Join_us.css">
+</head>
+<body   background="../img/fondo_2.png">
+   <div class="logo_superior">
+
+</div>
+    <nav class="menu-principal">
+    <a href="../index.html#popup-menu" class="activo">MENU DIGITAL</a>
+    <a href="#">CONOCENOS</a>
+    <a href="../index.html#popup-contacto">CONTACTANOS</a>
+    <a href="../index.html">HOME</a>
+    <a href="/sitios/Pedidos.html">PEDIDOS</a>
+    
+</nav>
+
+<div class="Fondo"> 
+    <div class="Contenedor_Box">
+        <h1 align="center">UNETENOS</h1>
+        <p align="center">Únete a nuesto equipo y se parte de la familia</p>
+        <h4 align="center">¿Por qué unirte a nosotros?</h4>
+        <p align="center">Porque ofrecemos exelentes oportunidades de crecimiento profesional, pollo y Tomboys</p>
+        <div class="Otros_Aspirantes">
+            <h2 align="center">Otros Aspirantes</h2>
+            <p align="center">Conoce a otros aspirantes <p>
+            <div id="lista-aspirantes" style="padding: 10px;"></div>
+  
+   
+
+        </div>
+    </div>
+</div>
+ 
+<div class="formulario">
+    <input type="text" id="input-nombre" placeholder="Nombre" class="Caja-texto">
+    <input type="text" id="input-email" placeholder="Email" class="Caja-texto">
+    <textarea id="input-mensaje" placeholder="¿Porque deberiamos Contratarte?" class="Caja-texto area-mensaje"></textarea>
+
+    <div class="Contenedor-boton">
+    <button type="submit" id="btn-enviar" class="Boton-enviar-mensaje">Enviar</button>
+    </div>
+</div>
+    <script>
+        
+        document.getElementById('btn-enviar').addEventListener('click', function() {
+            
+            
+            let nombre = document.getElementById('input-nombre').value;
+            let email = document.getElementById('input-email').value;
+            let mensaje = document.getElementById('input-mensaje').value;
+
+            
+            if (nombre === "" || mensaje === "") {
+                alert("Por favor llena el nombre y el mensaje al menos.");
+                return;
+            }
+
+         
+            let nuevaEntrada = document.createElement('div');
+            nuevaEntrada.classList.add('tarjeta-aspirante'); // Le daremos estilo en CSS
+            
+            
+            nuevaEntrada.innerHTML = `
+                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Razón:</strong> "${mensaje}"</p>
+            `;
+         
+            document.getElementById('lista-aspirantes').appendChild(nuevaEntrada);
+
+            document.getElementById('input-nombre').value = '';
+            document.getElementById('input-email').value = '';
+            document.getElementById('input-mensaje').value = '';
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
